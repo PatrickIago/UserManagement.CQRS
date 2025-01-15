@@ -119,26 +119,6 @@ https://localhost:5001/api/user
 }
 ```
 
-## Estrutura do Projeto
-
-```plaintext
-src/
-├── Controllers/
-│   └── UserController.cs
-├── Application/
-│   └── Interfaces/
-│        └── IUserRepository.cs
-├── Infra/
-│   ├── Data/
-│   │   └── UserManagementDbContext.cs
-│   └── Repositories/
-│        └── UserRepository.cs
-├── Domain/
-│   └── Entities/
-│        └── User.cs
-└── Program.cs
-```
-
 ## Contribuição
 
 Sinta-se à vontade para abrir problemas e enviar pull requests para melhorias ou correções.
