@@ -1,74 +1,77 @@
-User Management API
+# User Management API
 
 Esta é uma API simples para gerenciamento de usuários, criada com ASP.NET Core. A API permite realizar operações CRUD (Criar, Ler, Atualizar e Excluir) em um banco de dados SQL Server. O objetivo é oferecer um ponto de partida para desenvolvedores que desejam construir sistemas similares.
 
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-.NET 6 (ASP.NET Core)
+- .NET 6 (ASP.NET Core)
+- Entity Framework Core
+- SQL Server
+- Swagger para documentação da API
+- MediatR para padrão CQRS
 
-Entity Framework Core
+## Configuração do Projeto
 
-SQL Server
-
-Swagger para documentação da API
-
-MediatR para padrão CQRS
-
-Configuração do Projeto
-
-Dependências
+### Dependências
 
 Certifique-se de que as seguintes dependências estão instaladas:
 
-SDK .NET 6 ou superior
+1. SDK .NET 6 ou superior
+2. SQL Server
+3. Um cliente HTTP para testes (Postman, Insomnia, etc.)
 
-SQL Server
+### Clonando o Repositório
 
-Um cliente HTTP para testes (Postman, Insomnia, etc.)
-
-Clonando o Repositório
-
+```bash
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio
+```
 
-Configuração do Banco de Dados
+### Configuração do Banco de Dados
 
-Crie um banco de dados SQL Server.
+1. Crie um banco de dados SQL Server.
+2. Atualize a string de conexão no arquivo `appsettings.json`:
 
-Atualize a string de conexão no arquivo appsettings.json:
-
+```json
 "ConnectionStrings": {
   "DefaultConnection": "Server=SEU_SERVIDOR;Database=UserManagementDb;Trusted_Connection=True;"
 }
+```
 
-Execute as migrações para criar o esquema do banco de dados:
+3. Execute as migrações para criar o esquema do banco de dados:
 
+```bash
 dotnet ef database update
+```
 
-Executando a API
+### Executando a API
 
 Inicie a aplicação:
 
+```bash
 dotnet run
+```
 
 Acesse o Swagger para testar os endpoints:
 
-http://localhost:5000/swagger
+- [http://localhost:5000/swagger](http://localhost:5000/swagger)
 
-Endpoints da API
+## Endpoints da API
 
-Base URL
+### Base URL
 
+```
 https://localhost:5001/api/user
+```
 
-Endpoints Disponíveis
+### Endpoints Disponíveis
 
-1. Obter Todos os Usuários
+#### 1. Obter Todos os Usuários
 
-GET /api/user
+**GET** `/api/user`
 
-Resposta de Exemplo:
-
+**Resposta de Exemplo:**
+```json
 [
   {
     "id": 1,
@@ -77,44 +80,48 @@ Resposta de Exemplo:
     "lastName": "Doe"
   }
 ]
+```
 
-2. Adicionar Novo Usuário
+#### 2. Adicionar Novo Usuário
 
-POST /api/user
+**POST** `/api/user`
 
-Corpo da Requisição:
-
+**Corpo da Requisição:**
+```json
 {
   "username": "johndoe",
   "firstName": "John",
   "lastName": "Doe"
 }
+```
 
-Resposta de Sucesso:
-
+**Resposta de Sucesso:**
+```json
 {
   "id": 1,
   "username": "johndoe",
   "firstName": "John",
   "lastName": "Doe"
 }
+```
 
-3. Remover Usuário
+#### 3. Remover Usuário
 
-DELETE /api/user/{id}
+**DELETE** `/api/user/{id}`
 
-Parâmetros:
+**Parâmetros:**
+- `id`: ID do usuário a ser removido.
 
-id: ID do usuário a ser removido.
-
-Resposta de Sucesso:
-
+**Resposta de Sucesso:**
+```json
 {
   "message": "Usuário removido com sucesso."
 }
+```
 
-Estrutura do Projeto
+## Estrutura do Projeto
 
+```plaintext
 src/
 ├── Controllers/
 │   └── UserController.cs
@@ -130,16 +137,18 @@ src/
 │   └── Entities/
 │        └── User.cs
 └── Program.cs
+```
 
-Contribuição
+## Contribuição
 
 Sinta-se à vontade para abrir problemas e enviar pull requests para melhorias ou correções.
 
-Contato
+## Contato
 
-Nome: Patrick
+- **Nome:** Patrick
+- **Email:** [Mendespatrick720@gmail.com](mailto:Mendespatrick720@gmail.com)
 
-Email: Mendespatrick720@gmail.com
+---
 
-Licença: Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais informações.
+**Licença:** Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais informações.
 
