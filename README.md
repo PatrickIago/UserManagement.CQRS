@@ -4,7 +4,7 @@ Esta é uma API simples para gerenciamento de usuários, criada com ASP.NET Core
 
 ## Tecnologias Utilizadas
 
-- .NET 6 (ASP.NET Core)
+- .NET 8 (ASP.NET Core)
 - Entity Framework Core
 - SQL Server
 - Swagger para documentação da API
@@ -23,7 +23,7 @@ Certifique-se de que as seguintes dependências estão instaladas:
 ### Clonando o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone
 cd nome-do-repositorio
 ```
 
